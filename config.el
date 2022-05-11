@@ -76,3 +76,8 @@
 ;; they are implemented.
 
 (setq ns-right-option-modifier 'meta)
+
+(after! cider
+  (set-popup-rules!
+    '(("^\\*cider-repl"
+       :ignore t))))
