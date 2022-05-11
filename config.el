@@ -81,3 +81,7 @@
   (set-popup-rules!
     '(("^\\*cider-repl"
        :ignore t))))
+
+(map! :leader
+      :desc "cider-jack-in"
+      "j i" #'cider-jack-in)
