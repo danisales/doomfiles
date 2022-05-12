@@ -77,6 +77,9 @@
 
 (setq ns-right-option-modifier 'meta)
 
+;; (toggle-frame-maximized)
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 (after! cider
   (set-popup-rules!
     '(("^\\*cider-repl"
@@ -101,3 +104,13 @@
       (:prefix ("e" . "eshell")
       :desc "eshell/clear"
       "c" #'eshell/clear))
+
+(map! :leader
+      (:prefix ("e" . "eshell")
+      :desc "eshell/here"
+      "h" #'+eshell/here))
+
+(map! :leader
+      (:prefix ("e" . "eshell")
+      :desc "eshell/search-history"
+      "s" #'+eshell/search-history))
