@@ -85,3 +85,8 @@
 (map! :leader
       :desc "cider-jack-in"
       "j i" #'cider-jack-in)
+
+(use-package! eshell-git-prompt)
+
+(after! eshell
+  (eshell-git-prompt-use-theme 'robbyrussell))
