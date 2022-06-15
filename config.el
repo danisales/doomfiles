@@ -92,25 +92,20 @@
 
 ;; Custom key bindings
 (map! :leader
-      :desc "cider-jack-in"
-      "j i" #'cider-jack-in)
+      :desc "cider-jack-in" "j i" #'cider-jack-in)
 
 (map! :leader
       (:prefix ("e" . "eshell")
-      :desc "eshell"
-      "e" #'eshell))
+       :desc "eshell"                "e" #'eshell
+       :desc "eshell/clear"          "c" #'eshell/clear
+       :desc "eshell/here"           "h" #'+eshell/here
+       :desc "eshell/search-history" "s" #'+eshell/search-history))
 
 (map! :leader
-      (:prefix ("e" . "eshell")
-      :desc "eshell/clear"
-      "c" #'eshell/clear))
+      (:prefix ("m b" . "mob")
+       :desc "mob start" "s" #'mob-start
+       :desc "mob next"  "n" #'mob-next
+       :desc "mob done"  "d" #'mob-done
+       :desc "mob moo"   "m" #'mob-moo))
 
-(map! :leader
-      (:prefix ("e" . "eshell")
-      :desc "eshell/here"
-      "h" #'+eshell/here))
-
-(map! :leader
-      (:prefix ("e" . "eshell")
-      :desc "eshell/search-history"
-      "s" #'+eshell/search-history))
+(load! "mob")
